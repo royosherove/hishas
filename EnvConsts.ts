@@ -1,0 +1,2 @@
+export const INFURA_ID:string=process.env.NEXT_PUBLIC_INFURA_ID
+export const ETHERSCAN_KEY:string=process.env.NEXT_PUBLIC_ETHERSCAN_API_KEY
