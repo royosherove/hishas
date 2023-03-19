@@ -25,7 +25,16 @@ export default class Downloader implements IDownloader {
     console.info(result);
     return result;
   }
+  makeUsableArweaveUri(originalUri:string): string {
+    const PREFIX = 'https://arweave.net/';
+    return PREFIX + originalUri.split("//")[1];
+  }
   makeUsableIpfsUri(originalUri:string): string {
+    // return originalUri;
+    if(originalUri.toLowerCase().includes('ar:')){
+      return this.makeUsableArweaveUri(originalUri);
+    }
+
     if (originalUri.toLocaleLowerCase().startsWith('data')) {
       return originalUri;
     }
@@ -43,6 +52,7 @@ export default class Downloader implements IDownloader {
     }
     return noPlaceholder;;
   }
+
   Utf8ArrayToStr(array) {
     var out, i, len, c;
     var char2, char3;

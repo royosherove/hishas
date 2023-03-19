@@ -15,6 +15,6 @@ export interface IInvestiationLogger {
     logOwnerCode(code:string,name:string,addressOverride?:string);
     log(msg: string): void;
     logJson(json:JsonInfo);
-    logImage(uri: string): void;
+    logImage(uri: string,desc:string): void;
     logError(e: any);
 }

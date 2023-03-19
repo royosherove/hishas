@@ -11,6 +11,7 @@ export interface ICodeData{
 export interface IImageData{
     uri:string
     usableUri:string
+    desc:string
 }
 export interface IProp {
     name:string

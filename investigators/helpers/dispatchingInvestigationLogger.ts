@@ -51,10 +51,11 @@ export class DispatchingInvestigationLogger implements IInvestiationLogger {
     theStore.dispatch(discoverySlice.actions.onLog({ log: msg }));
     console.log(msg);
   }
-  logImage(uri: string): void {
+  logImage(uri: string, desc:string): void {
    console.log(uri) 
     theStore.dispatch(
       discoverySlice.actions.onImage({
+        desc: desc,
         uri: uri,
         usableUri: this.makeUsableIpfsUri(uri),
       })

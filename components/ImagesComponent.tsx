@@ -13,6 +13,7 @@ export const NFTImages = ()=>{
       ">
         {images.map((i) => (
           <div key={nanoid()}>
+            <div>{i.desc}</div>
             <img alt={'image'} src={makeSvgIfNeeded( i.usableUri)} className="w-64 rounded-md h-auto md:w-96" />
               <a href={makeSvgIfNeeded(i.usableUri)}
                 className="text-blue-700 underline block w-2/3 truncate overflow-y-scroll text-xs font-mono

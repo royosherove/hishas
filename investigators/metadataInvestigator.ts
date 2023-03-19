@@ -57,7 +57,7 @@ export default class metadataInvestigator extends InvestigatorBase {
         image = metadata.imageUrl;
       }
       const imageUsable = params.downloader.makeUsableIpfsUri(image);
-      params.logger.logImage(imageUsable);
+      params.logger.logImage(imageUsable, 'metadata.image');
       this.logUriProp(imageUsable, 'image', params.logger);
     } catch (e) {
       if (e.message.includes('revert')) {
@@ -90,7 +90,8 @@ export default class metadataInvestigator extends InvestigatorBase {
     }
     if (
       value.toLowerCase().includes('ipfs') ||
-      value.toLowerCase().includes('ar:') 
+      value.toLowerCase().includes('ar:') ||
+      value.toLowerCase().includes('arweave.net') 
       ) {
       logger.logProp(name, value, 0, '', 'meta')
       return;

@@ -45,7 +45,7 @@ export default class ContractUriInvestigator extends InvestigatorBase {
         const image: string = metadataAsJson['image'];
         const imageUsable = params.downloader.makeUsableIpfsUri(image);
         params.logger.logUriProp('contractUri.image',imageUsable,'meta');
-        params.logger.logImage(imageUsable);
+        params.logger.logImage(imageUsable,"contractUri.image");
 
       } catch (e) {
         if (e.message.includes('revert')) {
