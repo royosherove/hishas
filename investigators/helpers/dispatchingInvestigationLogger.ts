@@ -30,11 +30,14 @@ export class DispatchingInvestigationLogger implements IInvestiationLogger {
   }
 
   logUriProp(name: string, value: string,category:string) {
-    if (value.toLowerCase().includes('ipfs')) {
+    if (
+      value.toLowerCase().includes('ipfs') ||
+      value.toLowerCase().includes('ar:') 
+      ) {
       this.logProp(name, value, 0, '', category)
     }
     else {
-      this.logProp(name, value, 100, 'non-ipfs: can be replaced or shut down', category);
+      this.logProp(name, value, 100, 'centralized storage: can be replaced or shut down', category);
     }
   }
   logJson(json: JsonInfo) {

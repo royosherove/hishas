@@ -88,11 +88,14 @@ export default class metadataInvestigator extends InvestigatorBase {
       logger.logProp(name, value, 0, 'image embedded in metadata.', 'meta')
       return;
     }
-    if (value.toLowerCase().includes('ipfs')) {
+    if (
+      value.toLowerCase().includes('ipfs') ||
+      value.toLowerCase().includes('ar:') 
+      ) {
       logger.logProp(name, value, 0, '', 'meta')
       return;
     }
-      logger.logProp(name, value, 100, 'non-ipfs: can be replaced or shut down', 'meta');
+      logger.logProp(name, value, 100, 'centralized storage found: can be replaced or shut down', 'meta');
 
   }
 
