@@ -16,8 +16,7 @@ export default class CryptoKittiesInvestigator extends InvestigatorBase{
       params.logger.logUriProp('metadata fan api uri',apiUrl,'kitty')
       const json =  await params.downloader.getRemoteJson(apiUrl,'kitten details api call',params.logger);
       params.logger.logJson({jsonPath:'',jsonRaw:json,jsonUsablePath:''})
-      params.logger.logImage(json.image_url)
-      params.logger.logImage(json.image_url)
+      params.logger.logImage(json.image_url,'kitty image')
 
       // params.logger.log(JSON.stringify(result));
     } catch (e) {
