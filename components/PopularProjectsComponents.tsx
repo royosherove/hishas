@@ -2,6 +2,8 @@ import { nanoid } from "nanoid"
 import Image from "next/image"
 export const PopularProjects = ()=>{
     const projects = [
+        {name:"Music: Black Dave - Bag",image:"dave.gif",address:"0xd03902b4f1c11eb3f6746d09be98a028ba4df10f",id:15},
+        {name:"Music: Snoop Dogg",image:"snoop.jpeg",address:"0x37a03d4af1d7046d1126987b20117a0fdcbf6535",id:519},
         {name:"Music: Daniel Allan - Cage (with DLG)",image:"daniel_1.png",address:"0x7c6b8d2f756c69fd84a3fbb67435a0943c9011f1",id:1},
         {name:"Music: Nightshade",image:"nightshade.png",address:"0xb80f44B2611e0E37bD5BDA2B9b48E158ee4acD60",id:10},
         {name:"Azuki",image:"azuki.png",address:"0xed5af388653567af2f388e6224dc7c4b3241c544",id:100},
